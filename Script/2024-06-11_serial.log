@@ -1,0 +1,16 @@
+[2024-06-11 11:04:13,317]LPM Exit!
+[2024-06-11 11:04:13,327][info]: solenoid1, status old=1, new=1
+[2024-06-11 11:04:13,332][info]: solenoid2, status old=0, new=0
+[2024-06-11 11:04:13,354][debug]: battery protect mode=1 temperature=22, level=100
+[2024-06-11 11:04:13,364]Refresh Watch Dog![333463]/[350910166], battery = 100, UTC+80 Tue Jun 11 11:04:18 2024
+[2024-06-11 11:04:13,370]===============================================================
+[2024-06-11 11:04:13,376]current register time   = 350910181 ms
+[2024-06-11 11:04:13,377]current FreeHeapSize    = 192
+[2024-06-11 11:04:13,379]MinimumEverFreeHeapSize = 192
+[2024-06-11 11:04:13,397]guardTask        status:   Running    priority:24    left stack:  358    num: 2
+[2024-06-11 11:04:13,406]IDLE             status:     Ready    priority: 0    left stack:  108    num: 5
+[2024-06-11 11:04:13,413]cellularTask     status:   Blocked    priority:24    left stack:  262    num: 1
+[2024-06-11 11:04:13,422]workTask         status:   Blocked    priority:24    left stack:  116    num: 4
+[2024-06-11 11:04:13,427]cmdTask          status:   Blocked    priority:24    left stack:  910    num: 3
+[2024-06-11 11:04:13,434]===============================================================
+[2024-06-11 11:04:13,487]LPM Enter!

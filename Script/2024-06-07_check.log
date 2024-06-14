@@ -1,0 +1,81 @@
+2024-06-07 15:28:32,179 - check - DEBUG - COM13 - Silicon Labs CP210x USB to UART Bridge (COM13)
+2024-06-07 15:28:32,179 - check - DEBUG - COM1 - 通信端口 (COM1)
+2024-06-07 15:28:32,180 - check - DEBUG - COM5 - USB-SERIAL CH340 (COM5)
+2024-06-07 15:28:32,180 - check - DEBUG - COM25 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 3 (COM25)
+2024-06-07 15:28:32,180 - check - DEBUG - COM24 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 2 (COM24)
+2024-06-07 15:28:32,180 - check - DEBUG - COM27 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 1 (COM27)
+2024-06-07 15:28:32,180 - check - DEBUG - COM26 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 0 (COM26)
+2024-06-07 15:28:32,180 - check - DEBUG - COM12 - USB-SERIAL CH340 (COM12)
+2024-06-07 15:28:32,181 - check - DEBUG - COM11 - USB-SERIAL CH340 (COM11)
+2024-06-07 15:28:32,182 - check - INFO - Serial port COM11 opened successfully
+2024-06-07 15:46:25,707 - check - INFO - Closing serial port
+2024-06-07 15:46:25,707 - check - INFO - Serial port COM11 closed
+[2024-06-07 15:47:01,487] - check - DEBUG - COM13 - Silicon Labs CP210x USB to UART Bridge (COM13)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM1 - 通信端口 (COM1)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM5 - USB-SERIAL CH340 (COM5)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM25 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 3 (COM25)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM24 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 2 (COM24)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM27 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 1 (COM27)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM26 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 0 (COM26)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM12 - USB-SERIAL CH340 (COM12)
+[2024-06-07 15:47:01,488] - check - DEBUG - COM11 - USB-SERIAL CH340 (COM11)
+[2024-06-07 15:47:01,490] - check - INFO - Serial port COM11 opened successfully
+[2024-06-07 16:14:42,466] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 16:22:41,967] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 16:50:42,639] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 17:08:43,013] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 17:36:42,917] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 17:44:44,043] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 17:46:43,274] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 17:50:43,266] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 17:56:43,001] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 18:16:45,069] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 18:22:43,865] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 18:30:43,854] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 19:00:44,260] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 19:06:44,483] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 19:18:44,991] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 19:22:44,496] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 19:34:44,563] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 19:48:43,745] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 20:18:45,117] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 20:58:45,213] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 21:16:46,085] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 21:34:46,383] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 21:46:46,891] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 21:50:45,807] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 21:58:45,389] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 22:04:46,153] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 22:12:46,126] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 22:40:47,196] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 23:24:46,244] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 23:36:47,306] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-07 23:54:48,128] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-07 23:58:48,131] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-08 00:56:48,600] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-08 01:46:48,877] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-08 02:00:48,624] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-08 02:10:48,980] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-08 02:14:48,979] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-08 02:22:48,507] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-08 02:22:49,515] - check - INFO - Event triggered! Received data: [error]: cellular device wait response timeout
+[2024-06-08 02:23:53,587] - check - INFO - Event triggered! Received data: [warning] recv error format data 94 98
+[2024-06-08 02:23:56,584] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 65
+[2024-06-08 02:26:01,715] - check - INFO - Event triggered! Received data: [warning] recv error format data 94 98
+[2024-06-08 02:26:05,241] - check - INFO - Event triggered! Received data: [warning] recv error format data 65 84
+[2024-06-08 02:26:23,607] - check - INFO - Event triggered! Received data: [warning] recv error format data 94 98
+[2024-06-08 02:26:26,655] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 65
+[2024-06-08 03:25:43,711] - check - INFO - Event triggered! Received data: [warning] recv error format data 94 98
+[2024-06-08 03:25:47,321] - check - INFO - Event triggered! Received data: [warning] recv error format data 65 84
+[2024-06-08 03:25:52,816] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-09 02:25:53,182] - check - INFO - Event triggered! Received data: [warning] recv error format data 94 98
+[2024-06-09 02:25:56,194] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 65
+[2024-06-11 10:26:21,323] - check - INFO - Event triggered! Received data: [warning] recv error format data 43 81
+[2024-06-11 10:26:21,350] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-11 10:26:21,680] - check - INFO - Event triggered! Received data: [warning] recv error format data 43 81
+[2024-06-11 10:26:21,709] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-11 10:26:22,196] - check - INFO - Event triggered! Received data: [warning] recv error format data 43 81
+[2024-06-11 10:26:22,227] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-11 10:30:08,963] - check - INFO - Event triggered! Received data: [warning] recv error format data 10 13
+[2024-06-11 11:03:53,957] - check - INFO - Closing serial port
+[2024-06-11 11:03:53,959] - check - INFO - Serial port COM11 closed

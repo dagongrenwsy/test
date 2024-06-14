@@ -1,0 +1,11 @@
+[2024-06-11 11:04:04,772]COM13 - Silicon Labs CP210x USB to UART Bridge (COM13)
+[2024-06-11 11:04:04,773]COM1 - м╗пе╤к©з (COM1)
+[2024-06-11 11:04:04,773]COM5 - USB-SERIAL CH340 (COM5)
+[2024-06-11 11:04:04,773]COM25 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 3 (COM25)
+[2024-06-11 11:04:04,774]COM24 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 2 (COM24)
+[2024-06-11 11:04:04,774]COM27 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 1 (COM27)
+[2024-06-11 11:04:04,774]COM26 - Silicon Labs Quad CP2108 USB to UART Bridge: Interface 0 (COM26)
+[2024-06-11 11:04:04,774]COM11 - USB-SERIAL CH340 (COM11)
+[2024-06-11 11:04:04,776]Serial port COM11 opened successfully
+[2024-06-11 11:04:16,514]Closing serial port
+[2024-06-11 11:04:16,514]Serial port COM11 closed
