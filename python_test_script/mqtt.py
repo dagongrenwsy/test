@@ -1,49 +1,109 @@
-import paho.mqtt.client as mqtt
+# python 3.x
+
 import logging
+import random
+import time
+import schedule
 
-#配置日志
-logging.basicConfig(filename='mqtt.log', filemode='w', format='%(name)s - %(levelname)s - %(message)s', level=logging.INFO)
+from paho.mqtt import client as mqtt_client
 
-# 定义回调函数
+BROKER = 'a385rrmxek726j-ats.iot.us-west-2.amazonaws.com'
+PORT = 8883
+TOPICS_UP = ["uc/6805E03194600021/uplink", "uc/6805E03965640028/uplink"]
+TOPICS_DOWN = ["uc/6805E03194600021/downlink", "uc/6805E03965640028/downlink"]
+# generate client ID with pub prefix randomly
+CLIENT_ID = f'msmqtt-client-{random.randint(0, 1000)}'
+USERNAME = 'emqx'
+PASSWORD = 'public'
+CA_CERTS = 'D:\\share\\AWS证书\\aws-ca.crt'
+CERTFILE = 'D:\\share\\AWS证书\\aws-client.crt'
+KEYFILE = 'D:\\share\\AWS证书\\aws-key.key'
+
+FIRST_RECONNECT_DELAY = 1
+RECONNECT_RATE = 2
+MAX_RECONNECT_COUNT = 12
+MAX_RECONNECT_DELAY = 60
+
+FLAG_EXIT = False
+
+# 连接成功回调
 def on_connect(client, userdata, flags, rc):
-    print(f"Connected with result code {rc}")
-    # 订阅主题
-    client.subscribe("uc/6805E03084010025/uplink")
+    if rc == 0 and client.is_connected():
+        logging.info(f'Connected to MQTT Broker `{BROKER}`!')
+            # 订阅所有上行数据的主题
+        for topic in TOPICS_UP:
+            client.subscribe(topic)
+            logging.info(f'Subscribe to `{topic}` successfully')
+    else:
+        print(f'Failed to connect, return code {rc}')
+        logging.error(f'Failed to connect, return code {rc}')
 
+# 断开连接回调
+def on_disconnect(client, userdata, rc):
+    logging.info("Disconnected with result code: %s", rc)
+    reconnect_count, reconnect_delay = 0, FIRST_RECONNECT_DELAY
+    while reconnect_count < MAX_RECONNECT_COUNT:
+        logging.info("Reconnecting in %d seconds...", reconnect_delay)
+        time.sleep(reconnect_delay)
+
+        try:
+            client.reconnect()
+            logging.info("Reconnected successfully!")
+            return
+        except Exception as err:
+            logging.error("%s. Reconnect failed. Retrying...", err)
+
+        reconnect_delay *= RECONNECT_RATE
+        reconnect_delay = min(reconnect_delay, MAX_RECONNECT_DELAY)
+        reconnect_count += 1
+    logging.info("Reconnect failed after %s attempts. Exiting...", reconnect_count)
+    global FLAG_EXIT
+    FLAG_EXIT = True
+
+# 消息到达回调
 def on_message(client, userdata, msg):
+    print(f'Received `{msg.payload.hex()}` from `{msg.topic}` topic')
+    logging.info(f'Received `{msg.payload.hex()}` from `{msg.topic}` topic')
+
+
+def connect_mqtt():
+    client = mqtt_client.Client(CLIENT_ID)
+    client.tls_set(ca_certs=CA_CERTS, certfile=CERTFILE, keyfile=KEYFILE)
+    client.username_pw_set(USERNAME, PASSWORD)
+    client.on_connect = on_connect
+    client.on_message = on_message
+    client.connect(BROKER, PORT, keepalive=120)
+    client.on_disconnect = on_disconnect
+    return client
+
+# 定时发送下行数据
+def publish_downlink_data(client):
+    downlink_data  = "FF1DA1023C0000"  # 这里填写你需要发送的字符串数据
     try:
-        hex_message = msg.payload.hex()
-        print(f"'{msg.topic}' : '{hex_message}'")
+            binary_data = bytes.fromhex(downlink_data)
+            for topic in TOPICS_DOWN:
+                client.publish(topic, binary_data)
+                logging.info(f"Published downlink data: `{downlink_data}` to `{topic}`")
     except Exception as e:
-        print(f"Error processing message: {e}")
+        logging.info(f"Error encoding data: {e}")
 
-def on_publish(client, userdata, mid):
-    print(f"Message {mid} published")
-    
+def run():
+    logging.basicConfig(filename='./../../mqtt.log', format='[%(asctime)s] - %(levelname)s: %(message)s',
+                        level=logging.DEBUG)
+    client = connect_mqtt()
+    client.loop_start()
 
-def on_subscribe(client, userdata, mid, granted_qos):
-    print(f"Subscribed to topic, QOS: {granted_qos}")
-
-
-# 创建MQTT客户端
-client = mqtt.Client(client_id="mqtttest")
-
-# 设置回调函数
-client.on_connect = on_connect
-client.on_message = on_message
-client.on_publish = on_publish
-client.on_subscribe = on_subscribe
-
-# 配置最大消息大小限制
-client.max_inflight_messages_set(200)
-client.max_queued_messages_set(200)
+    try:
+        while True:
+            # 定时发布下行数据
+            time.sleep(120)
+            publish_downlink_data(client)
+    except KeyboardInterrupt:
+        print("Exiting...")
+    finally:
+        client.loop_stop()
+        client.disconnect()
 
 
-# 连接到MQTT代理
-client.connect("broker.emqx.io", 1883, 300)
-
-# 发布消息
-client.publish("uc/test/up", payload="Hello, MQTT!", qos=0, retain=False)
-
-# 开始阻塞式的网络循环，处理网络流量和回调函数
-client.loop_forever()
+if __name__ == '__main__':
+    run()
