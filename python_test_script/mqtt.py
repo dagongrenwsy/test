@@ -3,7 +3,6 @@
 import logging
 import random
 import time
-import schedule
 
 from paho.mqtt import client as mqtt_client
 
@@ -11,7 +10,6 @@ BROKER = 'a385rrmxek726j-ats.iot.us-west-2.amazonaws.com'
 PORT = 8883
 TOPICS_UP = ["uc/6805E03194600021/uplink", "uc/6805E03965640028/uplink"]
 TOPICS_DOWN = ["uc/6805E03194600021/downlink", "uc/6805E03965640028/downlink"]
-# generate client ID with pub prefix randomly
 CLIENT_ID = f'msmqtt-client-{random.randint(0, 1000)}'
 USERNAME = 'emqx'
 PASSWORD = 'public'
@@ -96,7 +94,7 @@ def run():
     try:
         while True:
             # 定时发布下行数据
-            time.sleep(120)
+            time.sleep(300)
             publish_downlink_data(client)
     except KeyboardInterrupt:
         print("Exiting...")
